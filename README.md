@@ -1,5 +1,8 @@
 # AgniVeda | Adaptive 2.5D LiDAR Mapping
 
+## 🔗 Live Demo
+[View Project](https://agniveda-lidar.netlify.app/)
+
 AgniVeda is a frontend prototype developed for **Smart India Hackathon 2026 – Problem Statement 26053**, titled **“Adaptive Variable Resolution 2.5D LiDAR Mapping for Dynamic Environment Perception”**, under the **DRDO – Smart Vehicles** theme.
 
 ## Problem Statement
@@ -51,7 +54,9 @@ The current web prototype demonstrates this concept using simulated LiDAR visual
 - **Styling:** CSS
 - **Future AI Processing:** PyTorch, PointNet++ / Sparse CNN
 - **Future LiDAR Processing:** Open3D, NumPy
-- **Potential Deployment:** ROS 2 / TensorRT for real-time integration
+- **Future Robotics Integration:** ROS 2
+- **Future Optimization:** TensorRT
+- **Deployment:** Netlify
 
 ## Project Structure
 
