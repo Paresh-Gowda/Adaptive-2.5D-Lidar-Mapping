@@ -1,0 +1,42 @@
+/* ================================
+   AGNIVEDA — APP
+================================ */
+
+.app {
+  min-height: 100vh;
+  background: #070b12;
+  color: #e8edf5;
+  overflow: hidden;
+}
+
+.app-body {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  padding-bottom: 70px;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1018;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263344;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4b60;
+}

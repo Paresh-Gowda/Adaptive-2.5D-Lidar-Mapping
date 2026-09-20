@@ -1,0 +1,32 @@
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 18px;
+  border-top: 1px solid #1b2533;
+  background: #080d14;
+  color: #64748b;
+  font-size: 9px;
+  z-index: 20;
+}
+
+.status-bar div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-bar strong {
+  color: #22c55e;
+  font-size: 9px;
+}
+
+.status-right {
+  margin-left: auto;
+  color: #475569;
+}

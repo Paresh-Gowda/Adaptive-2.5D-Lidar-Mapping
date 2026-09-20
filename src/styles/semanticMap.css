@@ -1,0 +1,273 @@
+.semantic-card {
+  margin-top: 16px;
+  border: 1px solid #1b2533;
+  border-radius: 10px;
+  background: #0b111a;
+  overflow: hidden;
+}
+
+.semantic-header {
+  height: 62px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1b2533;
+}
+
+.semantic-header span {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: #475569;
+}
+
+.semantic-header h3 {
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.elevation-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #22d3ee;
+  font-size: 9px;
+}
+
+/* MAP */
+
+.semantic-map {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  background: #080d14;
+}
+
+.terrain {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+.terrain-far {
+  top: 8%;
+  width: 25%;
+  height: 24%;
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.terrain-mid {
+  top: 31%;
+  width: 48%;
+  height: 28%;
+  background: rgba(34, 197, 94, 0.09);
+}
+
+.terrain-near {
+  bottom: 0;
+  width: 75%;
+  height: 43%;
+  background: rgba(34, 197, 94, 0.13);
+}
+
+/* GRID */
+
+.semantic-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+}
+
+/* ROAD */
+
+.semantic-road {
+  position: absolute;
+  left: 30%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+
+  background: rgba(71, 85, 105, 0.35);
+
+  clip-path: polygon(
+    43% 0,
+    57% 0,
+    100% 100%,
+    0 100%
+  );
+
+  border-left: 1px solid rgba(148, 163, 184, 0.2);
+  border-right: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* OBJECTS */
+
+.semantic-object {
+  position: absolute;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.semantic-object span,
+.semantic-ego span {
+  font-size: 7px;
+  letter-spacing: 0.7px;
+}
+
+.semantic-vehicle {
+  top: 36%;
+  left: 57%;
+  color: #facc15;
+}
+
+.semantic-pedestrian {
+  top: 48%;
+  left: 38%;
+  color: #c084fc;
+}
+
+.semantic-ego {
+  position: absolute;
+  z-index: 8;
+
+  left: 50%;
+  bottom: 28px;
+
+  width: 58px;
+  height: 58px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #22d3ee;
+  border-radius: 9px;
+
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.12);
+
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.15);
+}
+
+/* ELEVATION */
+
+.elevation-points {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.elevation-points i {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #67e8f9;
+
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+/* LEGEND */
+
+.semantic-legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 13px 18px;
+
+  border-top: 1px solid #1b2533;
+
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+.semantic-legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.semantic-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.legend-road {
+  background: #22c55e;
+}
+
+.legend-obstacle {
+  background: #ef4444;
+}
+
+.legend-vehicle {
+  background: #facc15;
+}
+
+.legend-pedestrian {
+  background: #c084fc;
+}
+
+.legend-elevation {
+  background: #22d3ee;
+}
+.semantic-object {
+  transition:
+    left 0.45s ease,
+    top 0.45s ease;
+}
+
+.height-readout {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 10;
+
+  padding: 8px 10px;
+
+  border: 1px solid #1b2533;
+  border-radius: 6px;
+
+  background: rgba(7, 11, 18, 0.85);
+
+  color: #526176;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.height-readout strong {
+  display: block;
+  margin-top: 3px;
+
+  color: #22d3ee;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+}
