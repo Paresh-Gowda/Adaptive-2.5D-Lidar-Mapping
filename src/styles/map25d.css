@@ -1,0 +1,356 @@
+.map25d-page {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.map-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #1d3340;
+  border-radius: 8px;
+  color: #61d6a0;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.map-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #61d6a0;
+  box-shadow: 0 0 10px #61d6a0;
+}
+
+.map25d-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.map25d-stats > div {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  padding: 16px;
+  background: #0c121b;
+  border: 1px solid #182231;
+  border-radius: 10px;
+}
+
+.map25d-stats svg {
+  grid-row: span 2;
+  color: #68aaff;
+  margin-top: 3px;
+}
+
+.map25d-stats span {
+  color: #69778a;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.map25d-stats strong {
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+.map25d-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 0.75fr;
+  gap: 18px;
+}
+
+.map25d-card,
+.map-info-card {
+  background: #0c121b;
+  border: 1px solid #182231;
+  border-radius: 11px;
+}
+
+.map25d-card {
+  padding: 18px;
+}
+
+.map-card-header {
+  display: flex;
+  justify-content: space-between;
+  color: #9aa7b8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.map-card-header small {
+  color: #5f6e81;
+}
+
+.map25d-view {
+  position: relative;
+  height: 475px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #071019;
+  border: 1px solid #182638;
+}
+
+.terrain {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 1px solid #294050;
+  border-right: 1px solid #294050;
+}
+
+.terrain-back {
+  top: 0;
+  width: 32%;
+  height: 100%;
+  background: #101923;
+}
+
+.terrain-middle {
+  bottom: 0;
+  width: 57%;
+  height: 66%;
+  background: #0e1c20;
+}
+
+.terrain-front {
+  bottom: 0;
+  width: 82%;
+  height: 34%;
+  background: #10231f;
+}
+
+.map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#1e3541 1px, transparent 1px),
+    linear-gradient(90deg, #1e3541 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.35;
+}
+
+.semantic-road {
+  position: absolute;
+  bottom: -8%;
+  left: 35%;
+  width: 30%;
+  height: 115%;
+  transform: rotate(5deg);
+  background: #151d25;
+  border-left: 1px dashed #4c5e6f;
+  border-right: 1px dashed #4c5e6f;
+}
+
+.map-object {
+  position: absolute;
+  z-index: 5;
+  transition: left 0.55s ease, top 0.55s ease;
+  text-align: center;
+}
+
+.map-object span,
+.ego-map span,
+.map-wall span {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.map-vehicle {
+  top: 37%;
+  color: #ffbd68;
+}
+
+.map-pedestrian {
+  left: 63%;
+  color: #d28cff;
+}
+
+.map-wall {
+  z-index: 4;
+  top: 27%;
+  left: 27%;
+  color: #9daab8;
+}
+
+.map-wall div {
+  width: 75px;
+  height: 9px;
+  background: #465463;
+  border-radius: 3px;
+}
+
+.ego-map {
+  position: absolute;
+  z-index: 7;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #68aaff;
+}
+
+.ego-map svg {
+  filter: drop-shadow(0 0 10px rgba(104, 170, 255, 0.35));
+}
+
+.elevation-point {
+  position: absolute;
+  z-index: 3;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #62d7a0;
+  box-shadow: 0 0 9px rgba(98, 215, 160, 0.5);
+}
+
+.point-1 {
+  top: 24%;
+  left: 42%;
+}
+
+.point-2 {
+  top: 31%;
+  left: 56%;
+}
+
+.point-3 {
+  top: 45%;
+  left: 48%;
+}
+
+.point-4 {
+  top: 58%;
+  left: 62%;
+}
+
+.point-5 {
+  top: 66%;
+  left: 38%;
+}
+
+.map-range {
+  position: absolute;
+  z-index: 8;
+  color: #596b7d;
+  font-size: 9px;
+}
+
+.range-a {
+  bottom: 30%;
+  left: 53%;
+}
+
+.range-b {
+  top: 39%;
+  left: 53%;
+}
+
+.range-c {
+  top: 12%;
+  left: 53%;
+}
+
+.map-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.map-info-card {
+  padding: 20px;
+}
+
+.layer-item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid #17212e;
+  font-size: 12px;
+}
+
+.layer-item:last-child {
+  border-bottom: none;
+}
+
+.layer-item strong {
+  color: #697a8c;
+  font-size: 9px;
+}
+
+.layer-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.drivable {
+  background: #59c997;
+}
+
+.non-drivable {
+  background: #c17d7d;
+}
+
+.vehicle {
+  background: #ffbd68;
+}
+
+.pedestrian {
+  background: #d28cff;
+}
+
+.elevation {
+  background: #68aaff;
+}
+
+.height-card {
+  min-height: 190px;
+}
+
+.height-value {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 12px;
+  color: #68aaff;
+}
+
+.height-value strong {
+  font-size: 28px;
+}
+
+.height-card p {
+  color: #718095;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1050px) {
+  .map25d-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map25d-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .map25d-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .map25d-view {
+    height: 380px;
+  }
+}

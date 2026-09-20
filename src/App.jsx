@@ -1,23 +1,45 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import StatusBar from "./components/StatusBar";
 import Sidebar from "./components/Sidebar";
+import StatusBar from "./components/StatusBar";
+
 import Dashboard from "./pages/Dashboard";
+import Perception from "./pages/Perception";
+import AdaptiveGridPage from "./pages/AdaptiveGridPage";
+import Map2_5D from "./pages/Map2_5D";
+import Analytics from "./pages/Analytics";
+import References from "./pages/References";
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
+    <BrowserRouter>
+      <div className="app">
+        <Navbar />
 
-      <div className="app-body">
-        <Sidebar />
+        <div className="app-body">
+          <Sidebar />
 
-        <main className="main-content">
-          <Dashboard />
-        </main>
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+
+              <Route path="/perception" element={<Perception />} />
+
+              <Route path="/adaptive-grid" element={<AdaptiveGridPage />} />
+
+              <Route path="/map" element={<Map2_5D />} />
+
+              <Route path="/analytics" element={<Analytics />} />
+
+              <Route path="/references" element={<References />} />
+            </Routes>
+          </main>
+        </div>
+
+        <StatusBar />
       </div>
-
-      <StatusBar />
-    </div>
+    </BrowserRouter>
   );
 }
 

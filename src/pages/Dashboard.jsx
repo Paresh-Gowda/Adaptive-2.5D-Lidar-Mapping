@@ -163,83 +163,79 @@ function Dashboard() {
 
         {/* METRICS */}
         <div className="side-metrics">
+          <Metric
+            icon={<Car size={18} />}
+            label="EGO VEHICLE"
+            value={`${speed.toFixed(1)} km/h`}
+            detail="MOVING"
+          />
 
-  <Metric
-    icon={<Car size={18} />}
-    label="EGO VEHICLE"
-    value={`${speed.toFixed(1)} km/h`}
-    detail="MOVING"
-  />
+          <Metric
+            icon={<Radio size={18} />}
+            label="POINT CLOUD"
+            value={points.toLocaleString()}
+            detail="points / frame"
+          />
 
-  <Metric
-    icon={<Radio size={18} />}
-    label="POINT CLOUD"
-    value={points.toLocaleString()}
-    detail="points / frame"
-  />
+          <Metric
+            icon={<Layers3 size={18} />}
+            label="MAP CELLS"
+            value="8,412"
+            detail="adaptive cells"
+          />
 
-  <Metric
-    icon={<Layers3 size={18} />}
-    label="MAP CELLS"
-    value="8,412"
-    detail="adaptive cells"
-  />
+          <Metric
+            icon={<Navigation size={18} />}
+            label="DETECTION"
+            value="ACTIVE"
+            detail="6 objects"
+          />
 
-  <Metric
-    icon={<Navigation size={18} />}
-    label="DETECTION"
-    value="ACTIVE"
-    detail="6 objects"
-  />
+          {/* ADAPTIVE RESOLUTION */}
 
-  {/* ADAPTIVE RESOLUTION */}
+          <div className="resolution-card">
+            <div className="resolution-header">
+              <Layers3 size={16} />
+              <span>ADAPTIVE RESOLUTION</span>
+            </div>
 
-  <div className="resolution-card">
+            <div className="resolution-zone near">
+              <div>
+                <strong>0–10 m</strong>
+                <small>HIGH DETAIL</small>
+              </div>
 
-    <div className="resolution-header">
-      <Layers3 size={16} />
-      <span>ADAPTIVE RESOLUTION</span>
-    </div>
+              <b>5 cm</b>
+            </div>
 
-    <div className="resolution-zone near">
-      <div>
-        <strong>0–10 m</strong>
-        <small>HIGH DETAIL</small>
-      </div>
+            <div className="resolution-zone">
+              <div>
+                <strong>10–25 m</strong>
+                <small>MEDIUM DETAIL</small>
+              </div>
 
-      <b>5 cm</b>
-    </div>
+              <b>10 cm</b>
+            </div>
 
-    <div className="resolution-zone">
-      <div>
-        <strong>10–25 m</strong>
-        <small>MEDIUM DETAIL</small>
-      </div>
+            <div className="resolution-zone">
+              <div>
+                <strong>25–50 m</strong>
+                <small>REDUCED DETAIL</small>
+              </div>
 
-      <b>10 cm</b>
-    </div>
+              <b>25 cm</b>
+            </div>
 
-    <div className="resolution-zone">
-      <div>
-        <strong>25–50 m</strong>
-        <small>REDUCED DETAIL</small>
-      </div>
+            <div className="resolution-zone far">
+              <div>
+                <strong>50–100 m</strong>
+                <small>LOW DETAIL</small>
+              </div>
 
-      <b>25 cm</b>
-    </div>
-
-    <div className="resolution-zone far">
-      <div>
-        <strong>50–100 m</strong>
-        <small>LOW DETAIL</small>
-      </div>
-
-      <b>50 cm</b>
-    </div>
-
-  </div>
-
-</div>
+              <b>50 cm</b>
+            </div>
+          </div>
+        </div>
       </div>
       <SemanticMap />
     </section>

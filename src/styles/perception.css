@@ -1,0 +1,367 @@
+.perception-page {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.perception-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.perception-heading h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 26px;
+  color: #f1f5f9;
+  margin-bottom: 7px;
+}
+
+.perception-heading p:last-child {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.model-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid #1d4d42;
+  border-radius: 6px;
+  color: #4ade80;
+  font-size: 9px;
+}
+
+.perception-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+}
+
+.terrain-card,
+.detections-card,
+.perception-pipeline {
+  border: 1px solid #1b2533;
+  border-radius: 10px;
+  background: #0b111a;
+  overflow: hidden;
+}
+
+.perception-card-header {
+  min-height: 62px;
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1b2533;
+}
+
+.perception-card-header span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #475569;
+}
+
+.perception-card-header h3 {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.perception-card-header > strong {
+  color: #22c55e;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Terrain */
+
+.terrain-view {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  background: #080d14;
+}
+
+.terrain-road {
+  position: absolute;
+  left: 28%;
+  width: 44%;
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(34, 197, 94, 0.04),
+      rgba(34, 197, 94, 0.14),
+      rgba(34, 197, 94, 0.04)
+    );
+
+  clip-path: polygon(
+    42% 0,
+    58% 0,
+    100% 100%,
+    0 100%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terrain-road span,
+.terrain-side span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: rgba(74, 222, 128, 0.5);
+}
+
+.terrain-side {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background: rgba(239, 68, 68, 0.035);
+  display: flex;
+  align-items: center;
+}
+
+.terrain-side.left {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+.terrain-side.right {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+.terrain-side span {
+  color: rgba(248, 113, 113, 0.45);
+}
+
+.terrain-scan-line {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  height: 1px;
+  background: rgba(34, 211, 238, 0.25);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.terrain-ego {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #22d3ee;
+  border-radius: 8px;
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.1);
+}
+
+.terrain-footer {
+  display: flex;
+  gap: 20px;
+  padding: 13px 18px;
+  border-top: 1px solid #1b2533;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.terrain-footer div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terrain-footer i {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+}
+
+.drive-dot {
+  background: #22c55e;
+}
+
+.non-drive-dot {
+  background: #ef4444;
+}
+
+/* Detections */
+
+.detections-card {
+  min-height: 100%;
+}
+
+.detection-count {
+  color: #22d3ee !important;
+}
+
+.detection-list {
+  padding: 8px 16px;
+}
+
+.detection-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 2px;
+  border-bottom: 1px solid #17212e;
+}
+
+.detection-row:last-child {
+  border-bottom: none;
+}
+
+.detection-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.07);
+}
+
+.detection-info {
+  flex: 1;
+}
+
+.detection-info strong,
+.detection-info small {
+  display: block;
+}
+
+.detection-info strong {
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+.detection-info small {
+  margin-top: 4px;
+  color: #526176;
+  font-size: 8px;
+}
+
+.confidence {
+  width: 70px;
+  text-align: right;
+}
+
+.confidence span {
+  font-size: 10px;
+  color: #4ade80;
+}
+
+.confidence div {
+  height: 3px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background: #17212e;
+  overflow: hidden;
+}
+
+.confidence i {
+  display: block;
+  height: 100%;
+  background: #22c55e;
+}
+
+/* Pipeline */
+
+.perception-pipeline {
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.pipeline-title {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #475569;
+  margin-bottom: 18px;
+}
+
+.pipeline-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pipeline-step {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #1b2533;
+  border-radius: 7px;
+  background: #090f17;
+}
+
+.pipeline-step span,
+.pipeline-step strong,
+.pipeline-step small {
+  display: block;
+}
+
+.pipeline-step span {
+  color: #22d3ee;
+  font-size: 8px;
+}
+
+.pipeline-step strong {
+  margin-top: 6px;
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.pipeline-step small {
+  margin-top: 3px;
+  color: #526176;
+  font-size: 8px;
+}
+
+.pipeline-arrow {
+  color: #334155;
+}
+
+@media (max-width: 900px) {
+  .perception-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline-flow {
+    flex-wrap: wrap;
+  }
+
+  .pipeline-step {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .perception-heading {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .terrain-view {
+    height: 320px;
+  }
+
+  .pipeline-arrow {
+    display: none;
+  }
+
+  .pipeline-step {
+    min-width: 100%;
+  }
+}

@@ -73,3 +73,6 @@
   color: #526176;
   font-size: 9px;
 }
+.sidebar-item {
+  text-decoration: none;
+}

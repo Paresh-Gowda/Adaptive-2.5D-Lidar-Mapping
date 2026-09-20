@@ -7,43 +7,80 @@ import {
   BookOpen,
 } from "lucide-react";
 
+import { NavLink } from "react-router-dom";
+
 import "../styles/sidebar.css";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Dashboard" },
-  { icon: ScanLine, label: "Perception" },
-  { icon: Grid3X3, label: "Adaptive Grid" },
-  { icon: Map, label: "2.5D Map" },
-  { icon: BarChart3, label: "Analytics" },
-  { icon: BookOpen, label: "References" },
+  {
+    icon: LayoutDashboard,
+    label: "Dashboard",
+    path: "/",
+  },
+  {
+    icon: ScanLine,
+    label: "Perception",
+    path: "/perception",
+  },
+  {
+    icon: Grid3X3,
+    label: "Adaptive Grid",
+    path: "/adaptive-grid",
+  },
+  {
+    icon: Map,
+    label: "2.5D Map",
+    path: "/map",
+  },
+  {
+    icon: BarChart3,
+    label: "Analytics",
+    path: "/analytics",
+  },
+  {
+    icon: BookOpen,
+    label: "References",
+    path: "/references",
+  },
 ];
 
 function Sidebar() {
   return (
     <aside className="sidebar">
-      <div className="sidebar-label">NAVIGATION</div>
+
+      <div className="sidebar-label">
+        NAVIGATION
+      </div>
 
       <nav>
-        {menuItems.map((item, index) => {
+        {menuItems.map((item) => {
           const Icon = item.icon;
 
           return (
-            <button
+            <NavLink
               key={item.label}
-              className={`sidebar-item ${index === 0 ? "active" : ""}`}
+              to={item.path}
+              className={({ isActive }) =>
+                `sidebar-item ${isActive ? "active" : ""}`
+              }
             >
               <Icon size={19} />
               <span>{item.label}</span>
-            </button>
+            </NavLink>
           );
         })}
       </nav>
 
       <div className="sidebar-project">
         <span>PROJECT</span>
+
         <strong>SIH26053</strong>
-        <small>Smart Vehicles · DRDO</small>
+
+        <small>
+          Smart Vehicles · DRDO
+        </small>
       </div>
+
     </aside>
   );
 }
