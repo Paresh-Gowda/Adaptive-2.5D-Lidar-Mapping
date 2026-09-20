@@ -10,16 +10,15 @@ function Dashboard() {
   const [pedestrianY, setPedestrianY] = useState(47);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSpeed((prev) => {
-        const next = prev + (Math.random() - 0.5) * 1.2;
-        return Math.max(8, Math.min(18, next));
-      });
+  const interval = setInterval(() => {
+    setSpeed((prev) => {
+      const next = prev + (Math.random() - 0.5) * 1.2;
+      return Math.max(8, Math.min(18, next));
+    });
 
-      setPoints(Math.floor(47000 + Math.random() * 5000));
+    setPoints(Math.floor(47000 + Math.random() * 5000));
 
-      setScan((prev) => (prev + 12) % 360);
-    }, 500);
+    setScan((prev) => (prev + 12) % 360);
 
     setVehicleX((prev) => {
       const next = prev + 0.7;
@@ -30,12 +29,14 @@ function Dashboard() {
       const next = prev + 0.4;
       return next > 56 ? 42 : next;
     });
+  }, 500);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <section className="dashboard">
+
       {/* HEADER */}
       <div className="page-heading">
         <div>

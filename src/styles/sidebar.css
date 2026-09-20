@@ -1,11 +1,17 @@
 .sidebar {
   width: 220px;
-  flex-shrink: 0;
+  height: 100%;
+
   border-right: 1px solid #1b2533;
   background: #090e16;
+
   padding: 24px 12px;
+
   display: flex;
   flex-direction: column;
+
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sidebar-label {

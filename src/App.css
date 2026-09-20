@@ -1,12 +1,13 @@
 /* =========================================
-   APP LAYOUT
+   APP
 ========================================= */
 
 .app {
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+  display: grid;
+  grid-template-rows: 64px minmax(0, 1fr) 34px;
 
   background: #070b12;
   color: #e8edf5;
@@ -14,16 +15,25 @@
   overflow: hidden;
 }
 
-.app-body {
-  flex: 1;
-  min-height: 0;
+/* =========================================
+   MAIN BODY
+========================================= */
 
-  display: flex;
-  align-items: stretch;
+.app-body {
+  min-height: 0;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+
+  overflow: hidden;
 }
 
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
 .main-content {
-  flex: 1;
   min-width: 0;
   min-height: 0;
 
@@ -31,7 +41,6 @@
   overflow-x: hidden;
 
   padding: 24px;
-  padding-bottom: 30px;
 
   box-sizing: border-box;
 }
@@ -58,12 +67,19 @@
 }
 
 /* =========================================
-   RESPONSIVE
+   MOBILE
 ========================================= */
 
 @media (max-width: 700px) {
+  .app {
+    grid-template-rows: 64px minmax(0, 1fr) 34px;
+  }
+
+  .app-body {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
   .main-content {
     padding: 18px;
-    padding-bottom: 24px;
   }
 }
